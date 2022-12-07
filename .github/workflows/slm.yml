@@ -9,14 +9,14 @@ jobs:
     timeout-minutes: 9999
 
     steps:
-    - name: Download Flutter
-      run: Invoke-WebRequest https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.3.9-stable.zip -OutFile flutter.zip
     - name: Download
       run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok
-    - name: Extract flutter
-      run: Expand-Archive flutter.zip
     - name: Extract
       run: Expand-Archive ngrok.zip
+    - name: Download Flutter
+      run: Invoke-WebRequest https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.3.9-stable.zip -OutFile flutter.zip
+    - name: Extract flutter
+      run: Expand-Archive flutter.zip
     - name: Auth
       run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
