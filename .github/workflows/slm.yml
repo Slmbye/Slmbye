@@ -9,10 +9,6 @@ jobs:
     timeout-minutes: 9999
 
     steps:
-    - name: winrar
-      run: Invoke-WebRequest https://dl2.soft98.ir/soft/w/WinRAR.6.11.zip -OutFile winrar.zip
-    - name: Xampp
-      run: Invoke-WebRequest https://dl2.soft98.ir/soft/x-y-z/XAMPP.8.1.12.x64.rar -OutFile xampp.rar
     - name: Download
       run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
     - name: Extract
